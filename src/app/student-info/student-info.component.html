@@ -1,0 +1,16 @@
+<div id="studentInfo">
+  <table>
+    <tr>
+      <th>姓名</th>
+      <th>性别</th>
+      <th>籍贯</th>
+      <th>民族</th>
+    </tr>
+    <tr *ngFor="let user of userInfos; let i=index" [style.background]="i%2?'red':'blue'">
+      <td>{{user.name}}</td>
+      <td>{{user.gender}}</td>
+      <td>{{user.nation}}</td>
+      <td>{{user.place}}</td>
+    </tr>
+  </table>
+</div>

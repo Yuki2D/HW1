@@ -1,0 +1,31 @@
+
+<div>
+  <label *ngFor="let u of photoAlt ;let i = index" [for]="u.id" (click)="chooseItem(i)">
+    <input type="radio" name="myFruit" [(ngModel)]="fruitName" [id]="u.id" [value]="u.id" >{{u.id}}
+    <img *ngIf="myIf" [src]="u.imgUrl" alt="" width="200px">
+  </label>
+  <!-- <label for="pear">
+    <input type="radio" name="myFruit" [(ngModel)]="fruitName" id="pear" value="雪梨" >雪梨
+  </label>
+  <label for="bananer">
+    <input type="radio" name="myFruit" [(ngModel)]="fruitName" id="bananer" value="香蕉" >香蕉
+  </label>
+  <label for="bxg">
+    <input type="radio" name="myFruit" [(ngModel)]="fruitName" id="bxg" value="百香果" >百香果
+  </label>
+  <label for="hlg">
+    <input type="radio" name="myFruit" [(ngModel)]="fruitName" id="hlg" value="火龙果" >火龙果
+  </label> -->
+    <!-- {{flowerName}} -->
+    <div>
+    </div>
+    <span [ngSwitch]="fruitName">
+      <span *ngSwitchCase="'苹果'">苹果</span>
+      <span *ngSwitchCase="'雪梨'" >雪梨</span>
+      <span *ngSwitchCase="'香蕉'" >香蕉</span>
+      <span *ngSwitchCase="'百香果'">百香果</span>
+      <span *ngSwitchCase="'火龙果'">火龙果</span>
+      <span *ngSwitchDefault>other</span>
+    </span>
+  </div>
+    
