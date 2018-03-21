@@ -1,12 +1,12 @@
-<div id="studentInfo">
-  <table>
+<div id="studentInfo" style="width:400px;height:400px;">
+  <table border="1" cellspacing="0" cellpadding="20">
     <tr>
       <th>姓名</th>
       <th>性别</th>
       <th>籍贯</th>
       <th>民族</th>
     </tr>
-    <tr *ngFor="let user of userInfos; let i=index" [style.background]="i%2?'red':'blue'">
+    <tr *ngFor="let user of userInfos; let i=index" [style.background]="i%2?'cyan':'#ccc'">
       <td>{{user.name}}</td>
       <td>{{user.gender}}</td>
       <td>{{user.nation}}</td>

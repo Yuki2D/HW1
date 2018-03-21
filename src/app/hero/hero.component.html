@@ -1,0 +1,24 @@
+<div style="width:400px;height:auto;">
+  <h4>请先添加英雄后,再进行查询!</h4>
+  <div>
+    <input type="text" (keyup.enter)="search($event.target.value)" placeholder="请输入要查找的英雄名称..." name="searchHero" [(ngModel)]="searchName">
+    <input type="button" value="查询英雄" (click)="search()">
+    <p>{{message}}</p>
+  </div>
+  <input type="text" placeholder="请输入英雄名称" [(ngModel)]="heroName" value="" name="heroName" (keyup.enter)="addHero()">
+  <input type="button" (click)="addHero()" value="添加英雄">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <tr *ngFor="let item of myHero; let i = index" [style.background]="item.selected ? 'green' : ''">
+      <td>
+        <input type="text" [value]="item.name" [disabled]="item.disabled" (blur)="loseFocus($event.target.value,i)" name="editValue">  
+      </td>
+      <td>
+        <button (click)="edit(item,i)">编辑</button>  
+      </td>
+      <td>
+        <button (click)="delete(item,i)">删除</button>
+      </td>
+    </tr>
+  </table>
+  
+</div>
